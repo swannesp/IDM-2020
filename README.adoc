@@ -14,6 +14,28 @@ Ce projet sera réalisé en 3 étapes:
 . Écrire, en ATL, des règles de transformation de UML vers IDL.
 . Écrire, grâce à Xtend, un générateur de code Thrift. 
 
+== Éléments UML à considérer
+
+Le méta-modèle UML est très étendu et complexe. 
+Votre transformation ne peut pas prendre en considération tous éléments du méta-modèle, mais seulement les éléments suivants:
+
+- Les Interfaces
+- Les Opérations contenues par ces Interfaces
+- Les Paramètres de ces Opérations
+- Les types des Paramètres: les Types Primitifs et les _Datatypes_
+
+Les paramètres peuvent aussi être typés par des classes: dans ce cas, l'opération ne doit pas être considérée.
+
+== Exemples de modèles UML
+
+Le dossier `model`contient des exemples de modèles UML simples, que vous pouvez utiliser pour valider votre transformation.
+
+== La transformation ATL
+
+La transformation que vous allez écrire est très simple, les datatypes sont transformés en structures,
+les interfaces en services et les opérations en fonction.
+
+Toutefois, n'oubliez pas qu'en UML les paramètres ont des cardinalités.
 
 == Organisation
 
@@ -22,6 +44,8 @@ Le projet sera réalisé par des groupes d'au plus 4 étudiants.
 == Préparation
 
 - Le méta-modèle UML est déjà disponible sous la forme d'un plugin Eclipse, appelé https://wiki.eclipse.org/MDT/UML2[UML2 Extender SDK].
+
 - Bien que le projet https://github.com/Taneb/ecore2thrift[Ecore2Thrift] génère des spécifications Thrift à partir de modèles Ecore,
 il ne dispose pas de méta-modèle de l'IDL de Thrift.
-- Vous aurez besoin de connaître une partie du meta-modèle d'UML. Sa spécification est disponible sur le https://git.eclipse.org/c/uml2/org.eclipse.uml2.git/tree/plugins/org.eclipse.uml2.uml/model?id=95a47511090741046b3e492d2f185632c36134ff[UML2 Project Repository]
+
+- Vous aurez besoin de connaître une partie du méta-modèle d'UML. Sa spécification est disponible sur le https://git.eclipse.org/c/uml2/org.eclipse.uml2.git/tree/plugins/org.eclipse.uml2.uml/model?id=95a47511090741046b3e492d2f185632c36134ff[UML2 Project Repository]

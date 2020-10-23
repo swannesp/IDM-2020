@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_cNyyEBUvEeuLVaJpWHfwYA" name="NewModel">
+  <packageImport xmi:id="_D6FEoBUxEeuLVaJpWHfwYA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_LVWY0BUwEeuLVaJpWHfwYA" name="Cache" visibility="public">
+    <ownedOperation xmi:id="_NL1ZUBUwEeuLVaJpWHfwYA" name="storeARecord">
+      <ownedParameter xmi:id="_S8ctEBUwEeuLVaJpWHfwYA" name="host">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p8bP0BUwEeuLVaJpWHfwYA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qajWQBUwEeuLVaJpWHfwYA" value="*"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_gYQ8gBUxEeuLVaJpWHfwYA" name="address">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rrztUBUxEeuLVaJpWHfwYA" value="4"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rVopABUxEeuLVaJpWHfwYA" value="4"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_8pGU4BUxEeuLVaJpWHfwYA" name="ttl">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+</uml:Model>

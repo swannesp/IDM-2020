@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_iKtVEBUyEeuLVaJpWHfwYA" name="NewModel">
+  <packagedElement xmi:type="uml:Interface" xmi:id="_waWqoBUyEeuLVaJpWHfwYA" name="Cache" visibility="public">
+    <ownedOperation xmi:id="_kSo1cBUzEeuLVaJpWHfwYA" name="storeARecord">
+      <ownedParameter xmi:id="_ma1RABUzEeuLVaJpWHfwYA" name="host" type="_9WHWcBUyEeuLVaJpWHfwYA"/>
+      <ownedParameter xmi:id="_mwibQBUzEeuLVaJpWHfwYA" name="address" type="_zTuEcBUyEeuLVaJpWHfwYA"/>
+      <ownedParameter xmi:id="_nCGsYBUzEeuLVaJpWHfwYA" name="ttl" type="_I7O_cBUzEeuLVaJpWHfwYA"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_zTuEcBUyEeuLVaJpWHfwYA" name="IPAddress" visibility="public">
+    <ownedAttribute xmi:id="_Orxv0BU1EeuLVaJpWHfwYA" name="values" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Orxv0RU1EeuLVaJpWHfwYA" value="4"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Orxv0hU1EeuLVaJpWHfwYA" value="4"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_9WHWcBUyEeuLVaJpWHfwYA" name="HostName" visibility="public">
+    <ownedAttribute xmi:id="_QzAM8BUzEeuLVaJpWHfwYA" name="names" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QzA0ABUzEeuLVaJpWHfwYA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QzA0ARUzEeuLVaJpWHfwYA" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_I7O_cBUzEeuLVaJpWHfwYA" name="TimeToLive" visibility="public">
+    <ownedAttribute xmi:id="_ZxHskBU1EeuLVaJpWHfwYA" name="value" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZxIToBU1EeuLVaJpWHfwYA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZxIToRU1EeuLVaJpWHfwYA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Model>
