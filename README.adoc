@@ -21,13 +21,30 @@ Ce projet sera réalisé en 3 étapes:
 
 === Exemple de transformation
 
-Prenons le modèle UML suivant :
+Prenons le modèle UML suivant (disponible sous le nom `cache-datatypes` dans le répertoire `model`) :
 
-TODO
+image::model/cache-datatypes.jpg[]
 
-On souhaite que votre chaîne de transformations produise au final le code Thrift suivant :
+On souhaite que votre transformation ATL produise d'abord un _modèle_ thrift conforme au méta-modèle Thrift produit par vos soins, puis que votre générateur de code Xtend produise le code Thrift suivant :
 
-TODO
+```thrift
+
+struct TimeToLive {
+    1:double value
+}
+
+struct HostName {
+    1:list<string> names
+}
+
+struct IPAddress {
+    1:list<i32> values
+}
+
+service Cache {
+    void storeARecord(1:HostName host, 2:IPAddress address, 3:TimeToLive ttl)
+}
+```
 
 === Éléments UML à considérer
 
@@ -45,7 +62,8 @@ Les paramètres peuvent aussi être typés par des classes: dans ce cas, l'opér
 
 === Exemples de modèles UML
 
-Le dossier `model` contient des exemples de modèles UML simples, que vous pouvez utiliser pour tester et valider votre transformation.
+Le dossier `model` contient quelques exemples de modèles UML simples, que vous pouvez utiliser pour tester et valider votre transformation. 
+N'hésitez pas à en définir de nouveaux pour compléter vos tests.
 
 == Travail demandé
 
@@ -77,9 +95,17 @@ Ce n'est donc pas une source d'inspiration que nous conseillons.
 
 === Rendu
 
-TODO
 
-=== Notes sur la transformation ATL
+Pour le rendu de ce TP, vous devez produire un projet complet sur link:https://gitlab.univ-nantes.fr[le Gitlab de l'université] avec :
+
+- la visibilité du projet en mode *privé* (très important),
+- l'utilisateur *@Naobot* comme membre _Developer_ du projet (pour donner l'accès aux enseignants),
+- la présence de la chaîne de caractères *vQoKTITxcaKmphV4ZtB80Qw8Z* dans le champ _description_ du projet (pour nous permettre de retrouver les projets facilement dans gitlab),
+- votre projet complet.
+
+NOTE: Vous pouvez obtenir un projet de départ en effectuant une divergence (_fork_) du présent projet, mais si vous faites cela n'oubliez pas de tout de suite mettre la visibilité du projet en mode *privé*.
+
+=== Conseils pour la transformation ATL
 
 La transformation que vous allez écrire est très simple, les datatypes sont transformés en structures,
 les interfaces en services et les opérations en fonction.
