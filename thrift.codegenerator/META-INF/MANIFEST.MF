@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: thrift.codegenerator
+Bundle-SymbolicName: thrift.codegenerator; singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ thrift.metamodel;bundle-version="0.1.0",
+ org.junit.jupiter.api;bundle-version="5.6.0"
