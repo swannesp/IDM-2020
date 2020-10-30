@@ -1,3 +1,6 @@
+:toc:
+:sectnums:
+
 = Thrift
 
 Projet "UML to Thrift"
@@ -19,10 +22,10 @@ Ce projet sera réalisé en 3 étapes:
 Le méta-modèle UML est très étendu et complexe. 
 Votre transformation ne peut pas prendre en considération tous éléments du méta-modèle, mais seulement les éléments suivants:
 
-- Les Interfaces
-- Les Opérations contenues par ces Interfaces
-- Les Paramètres de ces Opérations
-- Les types des Paramètres: les Types Primitifs et les _Datatypes_
+- Les _Interfaces_
+- Les _Opérations_ contenues par ces _Interfaces_
+- Les _Paramètres_ de ces _Opérations_
+- Les types des _Paramètres_: les _Types Primitifs_ et les _Datatypes_
 
 Les paramètres peuvent aussi être typés par des classes: dans ce cas, l'opération ne doit pas être considérée.
 
