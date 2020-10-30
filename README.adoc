@@ -1,54 +1,87 @@
 :toc:
 :sectnums:
 
-= Thrift
+= Projet MDE : transformation UML vers Thrift
 
-Projet "UML to Thrift"
 
-== Objectif 
+== Présentation
 
-L'objectif de ce projet est de transformer des modèles UML dans des spécifications Apache Thrift.
-Plus précisément,  de transformer des Interfaces d'UML, ainsi que leurs Opérations en des Services, Structures et Fonctions du langage de 
+=== Objectif 
+
+L'objectif de ce projet est de transformer des modèles UML en des spécifications Apache Thrift.
+Plus précisément,  de transformer des _Interfaces_ d'UML, ainsi que leurs _Opérations_ en des _Services_, _Structures_ et _Fonctions_ du langage de 
 description d'interfaces (IDL) de Thrift.
 
 Ce projet sera réalisé en 3 étapes:
 
-. Spécifier le méta-modèle de Thrift IDL 
-. Écrire, en ATL, des règles de transformation de UML vers IDL.
+. Spécifier le méta-modèle de Thrift IDL,
+. Écrire, en ATL, des règles de transformation de UML vers IDL,
 . Écrire, grâce à Xtend, un générateur de code Thrift. 
 
-== Éléments UML à considérer
 
-Le méta-modèle UML est très étendu et complexe. 
-Votre transformation ne peut pas prendre en considération tous éléments du méta-modèle, mais seulement les éléments suivants:
+=== Exemple de transformation
 
-- Les _Interfaces_
-- Les _Opérations_ contenues par ces _Interfaces_
-- Les _Paramètres_ de ces _Opérations_
-- Les types des _Paramètres_: les _Types Primitifs_ et les _Datatypes_
+Prenons le modèle UML suivant :
+
+TODO
+
+On souhaite que votre chaîne de transformations produise au final le code Thrift suivant :
+
+TODO
+
+=== Éléments UML à considérer
+
+Le méta-modèle UML est standardisé et est disponible publiquement sous format Ecore.
+Il est très étendu et complexe. 
+Votre transformation ne peut donc pas prendre en considération tous éléments du méta-modèle, et pourra se concentrer sur les éléments suivants :
+
+- Les _Interfaces_,
+- Les _Opérations_ contenues par ces _Interfaces_,
+- Les _Paramètres_ de ces _Opérations_,
+- Les types des _Paramètres_: les _Types Primitifs_ et les _Datatypes_.
 
 Les paramètres peuvent aussi être typés par des classes: dans ce cas, l'opération ne doit pas être considérée.
 
-== Exemples de modèles UML
 
-Le dossier `model`contient des exemples de modèles UML simples, que vous pouvez utiliser pour valider votre transformation.
+=== Exemples de modèles UML
 
-== La transformation ATL
+Le dossier `model` contient des exemples de modèles UML simples, que vous pouvez utiliser pour tester et valider votre transformation.
+
+== Travail demandé
+
+=== Organisation
+
+Le projet sera réalisé par des groupes d'au plus 4 étudiants.
+
+=== Préparation
+
+Le présent dépôt git contient un unique projet Eclipse à importer, dans lequel vous trouverez :
+
+- Un fichier Ecore vide `thrift-idl.ecore`, à compléter avec vorte métamodèle Thrift.
+- Une transformation ATL vide `uml2thrift.atl`, à compléter avec votre transformation UML→Thrift.
+- Un générateur de code Xtend TODO, à compléter avec votre générateur de code pour votre métamodèle Thrift.
+
+Il est à noter que :
+
+- Le méta-modèle UML officiel est disponible sous la forme d'un plugin Eclipse, appelé https://wiki.eclipse.org/MDT/UML2[UML2 Extender SDK].
+Le fichier ATL vide que nous fournissons contient déjà une dépendance vers ce méta-modèle, vous n'avez donc pas besoin de l'ajouter à votre projet.
+
+- Vous aurez besoin de connaître une toute petite partie du méta-modèle d'UML. Le fichier `UML.ecore` contenant le méta-modèle UML sous format Ecore est disponible sur le https://git.eclipse.org/c/uml2/org.eclipse.uml2.git/tree/plugins/org.eclipse.uml2.uml/model?id=95a47511090741046b3e492d2f185632c36134ff[UML2 Project Repository], et la spécification détaillée du métamodèle UML est disponible link:https://www.omg.org/spec/UML/2.5.1/PDF[dans le standard lui même sous format PDF].
+*Vous allez devoir passer un peu de temps à comprendre ce méta-modèle ; n'hésitez pas à nous poser des questions !*
+
+- Il existe un projet sur Github qui se propose de générer du Thrift à partir du langage Ecore à cette adresse : https://github.com/Taneb/ecore2thrift[Ecore2Thrift].
+Mais d'une part ce projet génère des spécifications Thrift à partir de modèles Ecore (et non UML), et d'autre part
+il ne dispose pas de méta-modèle de l'IDL de Thrift.
+Ce n'est donc pas une source d'inspiration que nous conseillons.
+
+
+=== Rendu
+
+TODO
+
+=== Notes sur la transformation ATL
 
 La transformation que vous allez écrire est très simple, les datatypes sont transformés en structures,
 les interfaces en services et les opérations en fonction.
 
 Toutefois, n'oubliez pas qu'en UML les paramètres ont des cardinalités.
-
-== Organisation
-
-Le projet sera réalisé par des groupes d'au plus 4 étudiants.
-
-== Préparation
-
-- Le méta-modèle UML est déjà disponible sous la forme d'un plugin Eclipse, appelé https://wiki.eclipse.org/MDT/UML2[UML2 Extender SDK].
-
-- Bien que le projet https://github.com/Taneb/ecore2thrift[Ecore2Thrift] génère des spécifications Thrift à partir de modèles Ecore,
-il ne dispose pas de méta-modèle de l'IDL de Thrift.
-
-- Vous aurez besoin de connaître une partie du méta-modèle d'UML. Sa spécification est disponible sur le https://git.eclipse.org/c/uml2/org.eclipse.uml2.git/tree/plugins/org.eclipse.uml2.uml/model?id=95a47511090741046b3e492d2f185632c36134ff[UML2 Project Repository]
