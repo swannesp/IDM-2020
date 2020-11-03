@@ -113,13 +113,22 @@ public interface ThriftidlPackage extends EPackage {
 	int IDL_MODEL__SERVICES = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDL_MODEL__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>IDL Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IDL_MODEL_FEATURE_COUNT = 1;
+	int IDL_MODEL_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>IDL Model</em>' class.
@@ -171,6 +180,17 @@ public interface ThriftidlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIDLModel_Services();
+
+	/**
+	 * Returns the meta object for the attribute '{@link thrift.metamodel.IDL.IDLModel#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see thrift.metamodel.IDL.IDLModel#getName()
+	 * @see #getIDLModel()
+	 * @generated
+	 */
+	EAttribute getIDLModel_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -230,6 +250,14 @@ public interface ThriftidlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IDL_MODEL__SERVICES = eINSTANCE.getIDLModel_Services();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IDL_MODEL__NAME = eINSTANCE.getIDLModel_Name();
 
 	}
 

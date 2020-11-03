@@ -24,6 +24,7 @@ import thrift.metamodel.IDL.ThriftidlPackage;
  * </p>
  * <ul>
  *   <li>{@link thrift.metamodel.IDL.impl.IDLModelImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link thrift.metamodel.IDL.impl.IDLModelImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +39,25 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	 * @ordered
 	 */
 	protected Service services;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,6 +133,27 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ThriftidlPackage.IDL_MODEL__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -132,6 +173,8 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 		switch (featureID) {
 		case ThriftidlPackage.IDL_MODEL__SERVICES:
 			return getServices();
+		case ThriftidlPackage.IDL_MODEL__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,6 +189,9 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 		switch (featureID) {
 		case ThriftidlPackage.IDL_MODEL__SERVICES:
 			setServices((Service) newValue);
+			return;
+		case ThriftidlPackage.IDL_MODEL__NAME:
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,6 +208,9 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 		case ThriftidlPackage.IDL_MODEL__SERVICES:
 			setServices((Service) null);
 			return;
+		case ThriftidlPackage.IDL_MODEL__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -176,8 +225,27 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 		switch (featureID) {
 		case ThriftidlPackage.IDL_MODEL__SERVICES:
 			return services != null;
+		case ThriftidlPackage.IDL_MODEL__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //IDLModelImpl

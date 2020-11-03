@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
-    <stringAttribute key="ATL File Name" value="/Thrift/src/main/atl/uml2thrift.atl"/>
+    <stringAttribute key="ATL File Name" value="/thrift.uml2thrift/src/uml2thrift.atl"/>
     <stringAttribute key="ATL VM" value="Regular VM"/>
     <stringAttribute key="ATL_COMPILER" value="atl2006"/>
     <booleanAttribute key="IS_REFINING" value="false"/>
@@ -40,9 +40,9 @@
         <mapEntry key="OUT" value="IDL"/>
     </mapAttribute>
     <mapAttribute key="Path">
-        <mapEntry key="IDL" value="/Thrift/src/main/ecore/thrift-idl.ecore"/>
-        <mapEntry key="IN" value="/Thrift/model/mdns.uml"/>
-        <mapEntry key="OUT" value="/Thrift/target/mdns.idl"/>
+        <mapEntry key="IDL" value="/thrift.metamodel/model/thriftidl.ecore"/>
+        <mapEntry key="IN" value="/thrift.models/models/input/uml/cache-datatypes.uml"/>
+        <mapEntry key="OUT" value="/thrift.models/models/output/idl/cache-datatypes.xmi"/>
         <mapEntry key="UML" value="uri:http://www.eclipse.org/uml2/2.1.0/UML"/>
     </mapAttribute>
     <listAttribute key="Superimpose"/>

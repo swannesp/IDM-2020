@@ -140,6 +140,15 @@ public class ThriftidlPackageImpl extends EPackageImpl implements ThriftidlPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIDLModel_Name() {
+		return (EAttribute) idlModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ThriftidlFactory getThriftidlFactory() {
 		return (ThriftidlFactory) getEFactoryInstance();
 	}
@@ -169,6 +178,7 @@ public class ThriftidlPackageImpl extends EPackageImpl implements ThriftidlPacka
 
 		idlModelEClass = createEClass(IDL_MODEL);
 		createEReference(idlModelEClass, IDL_MODEL__SERVICES);
+		createEAttribute(idlModelEClass, IDL_MODEL__NAME);
 	}
 
 	/**
@@ -211,6 +221,8 @@ public class ThriftidlPackageImpl extends EPackageImpl implements ThriftidlPacka
 		initEReference(getIDLModel_Services(), this.getService(), null, "services", null, 0, 1, IDLModel.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIDLModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, IDLModel.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

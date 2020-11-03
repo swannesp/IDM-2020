@@ -23,9 +23,9 @@ Ce projet sera réalisé en 3 étapes:
 
 Prenons le modèle UML suivant (disponible sous le nom `cache-datatypes` dans le répertoire `model`) :
 
-image::model/cache-datatypes.jpg[]
+image::thrift.testmodels/models/input/uml/cache-datatypes.jpg[]
 
-On souhaite que votre transformation ATL produise d'abord un _modèle_ thrift conforme au méta-modèle Thrift produit par vos soins, puis que votre générateur de code Xtend produise le code Thrift suivant :
+On souhaite que votre transformation ATL produise d'abord un _modèle_ thrift conforme au méta-modèle Thrift produit par vos soins, puis que votre générateur de code Xtend sache lire votre modèle Thrift afin de produire le code Thrift suivant :
 
 ```thrift
 
@@ -60,11 +60,6 @@ Votre transformation ne peut donc pas prendre en considération tous éléments 
 Les paramètres peuvent aussi être typés par des classes: dans ce cas, l'opération ne doit pas être considérée.
 
 
-=== Exemples de modèles UML
-
-Le dossier `model` contient quelques exemples de modèles UML simples, que vous pouvez utiliser pour tester et valider votre transformation. 
-N'hésitez pas à en définir de nouveaux pour compléter vos tests.
-
 == Travail demandé
 
 === Organisation
@@ -73,13 +68,26 @@ Le projet sera réalisé par des groupes d'au plus 4 étudiants.
 
 === Préparation
 
-Le présent dépôt git contient un unique projet Eclipse à importer, dans lequel vous trouverez :
+Le présent dépôt contient 4 projets Eclipse à importer, à savoir :
 
-- Un fichier Ecore vide `thrift-idl.ecore`, à compléter avec vorte métamodèle Thrift.
-- Une transformation ATL vide `uml2thrift.atl`, à compléter avec votre transformation UML→Thrift.
-- Un générateur de code Xtend TODO, à compléter avec votre générateur de code pour votre métamodèle Thrift.
+- `thrift.metamodel` : le projet dans lequel vous devez mettre au point un métamodèle pour le langage Thrift-IDL. 
+Un fichier `.ecore` à compléter s'y trouve. 
+Après chaque modification faite à ce fichier `.ecore` (par l'éditeur arborescent ou par la vue graphique à l'aide du `.aird`), n'oubliez pas d'ouvrir le fichier `.genmodel` qui se trouve à côté, puis de faire clic droit et _Generate Model Code_.
+- `thrift.testmodels` : le projet dans lequel nous vous fournissons différents modèles UMLs que votre transformation devra être capable de transformer.  
+Chaque modèle est présent dans le répertoire `models/input/uml`.
+Vous pouvez compléter ce répertoire avec d'autres modèles UML si vous le souhaitez.
+- `thrift.uml2thrift` : le projet dans lequel vous devez écrire en ATL votre transformation UML→Thrift.
+Un fichier `.atl` à compléter s'y trouve.
+Pour tester votre transformation, vous pouvez utiliser les deux fichiers `.launch` qui se trouvent dans le projet, chacun de ces fichiers pouvant déclencher la transformation d'un des modèles de test fournis dans le projet `thrift.testmodels`.
+Les modèles produits seront écrits dans le répertoire `models/output/idl` du projet `thrift.testmodels`.
+- `thrift.codegenerator` : le projet dans lequel vous devez écrire en Xtend votre générateur de code pour modèles Thrift.
+Un fichier `.xtend` à compléter s'y trouve.
+Pour tester votre générateur de code, vous devez déjà avoir déjà fait appel à votre transformation ATL sur les différents modèles UML fournis, puis vous pouvez utiliser le fichier `runCodeGenerator.launch`.
+Cela lira les modèles présents dans le répertoire `models/output/idl` du projet `thrift.testmodels`, et cela produira à côté de ces modèles des fichiers avec l'extension `.thrift` contenant le code généré.
 
-Il est à noter que :
+NOTE: Pour exécuter un fichier `.launch`, il suffit de faire un clic droit et de faire `Run as…` et de choisir l'unique option disponible.
+
+Il est à observer que :
 
 - Le méta-modèle UML officiel est disponible sous la forme d'un plugin Eclipse, appelé https://wiki.eclipse.org/MDT/UML2[UML2 Extender SDK].
 Le fichier ATL vide que nous fournissons contient déjà une dépendance vers ce méta-modèle, vous n'avez donc pas besoin de l'ajouter à votre projet.
