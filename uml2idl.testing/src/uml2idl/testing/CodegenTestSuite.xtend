@@ -43,7 +43,7 @@ class CodegenTestSuite {
 	}
 
 	def static List<String> modelProvider() {
-		return Files::list(Paths::get("models/output/idl/")).map([p|p.toString]).filter([s|s.endsWith(".xmi")]).collect(Collectors.toList())
+		return Files::walk(Paths::get("models/output/idl/")).map([p|p.toString]).filter([s|s.endsWith(".xmi")]).collect(Collectors.toList())
 	}
 
 }

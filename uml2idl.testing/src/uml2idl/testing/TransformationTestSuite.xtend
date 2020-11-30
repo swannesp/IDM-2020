@@ -22,7 +22,7 @@ class TransformationTestSuite {
 		val String inputModelPath = modelPath
 		val String transformationAsmPath = "../uml2idl.transformation/src/uml2idl.asm"
 		
-		val modelName = Paths::get(modelPath).fileName.toString
+		val modelName = Paths::get("models/input/uml/").relativize(Paths::get(modelPath)).toString()
 		val String outputModelPath = "models/output/idl/" + modelName.substring(0, modelName.length - 3) + "xmi"
 
 		ATLHelper::transform(inputMetamodelPath, inputMetamodelATLName, outputMetamodelPath, outputMetamodelATLName,
@@ -36,7 +36,7 @@ class TransformationTestSuite {
 	}
 
 	def static List<String> modelProvider() {
-		return Files::list(Paths::get("models/input/uml/")).map([p|p.toString]).filter([s|s.endsWith(".uml")]).collect(
+		return Files::walk(Paths::get("models/input/uml/")).map([p|p.toString]).filter([s|s.endsWith(".uml")]).collect(
 			Collectors.toList())
 	}
 }
