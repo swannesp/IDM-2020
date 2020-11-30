@@ -7,10 +7,10 @@ create OUT : IDL from IN : UML;
 
 rule interface2service {
 	from
-		i : UML!Model
+		m1 : UML!Model
 	to
-		s : IDL!IDLModel (
-				name <- i.name
+		m2 : IDL!IDLModel (
+				name <- m1.name
 			)
 		
 } 
