@@ -13,6 +13,11 @@ import org.junit.jupiter.params.provider.MethodSource
 import uml2idl.codegenerator.IDLCodeGenerator
 import uml2idl.metamodel.idl.IDLModel
 
+/**
+ * Run the IDLCodeGenerator on each IDL model found in "models/output/idl/*.xmi".
+ * 
+ * Results are produced in the same folder but with the '.thrift' file extension.
+ */
 class CodegenTestSuite {
 
 	private def void generateCodeFrom(String modelPath) {
