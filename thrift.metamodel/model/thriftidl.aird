@@ -7,7 +7,7 @@
     <semanticResources>../plugin.properties</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_XMQw0BrgEeuZetjM_8-iow">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XMgocRrgEeuZetjM_8-iow" name="thriftidl" repPath="#_XMc-EBrgEeuZetjM_8-iow" changeId="48a76fc4-7d73-40e8-bcbf-bd3dde0f48d4">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XMgocRrgEeuZetjM_8-iow" name="thriftidl" repPath="#_XMc-EBrgEeuZetjM_8-iow" changeId="e40bf3dd-d698-4c17-80a0-2fcc236b6ea5">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="thriftidl.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -19,6 +19,10 @@
         <children xmi:type="notation:Node" xmi:id="_rkFlkBrgEeuZetjM_8-iow" type="2003" element="_rjw1cBrgEeuZetjM_8-iow">
           <children xmi:type="notation:Node" xmi:id="_rkGMoBrgEeuZetjM_8-iow" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_rkGzsBrgEeuZetjM_8-iow" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_drtNADLoEeuUBbL598CdAQ" type="3010" element="_drSWQDLoEeuUBbL598CdAQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_drtNATLoEeuUBbL598CdAQ" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_drtNAjLoEeuUBbL598CdAQ"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_rkGzsRrgEeuZetjM_8-iow"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_rkGzshrgEeuZetjM_8-iow"/>
           </children>
@@ -80,6 +84,14 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_drSWQDLoEeuUBbL598CdAQ" name="name : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="thriftidl.ecore#//IDLModel/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="thriftidl.ecore#//IDLModel/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_drUygDLoEeuUBbL598CdAQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_rj1G4BrgEeuZetjM_8-iow" name="Service" tooltipText="" incomingEdges="_rkAGABrgEeuZetjM_8-iow" width="12" height="10">
       <target xmi:type="ecore:EClass" href="thriftidl.ecore#//Service"/>
