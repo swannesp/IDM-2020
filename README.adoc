@@ -80,11 +80,13 @@ Un fichier `.xtend` à compléter s'y trouve.
 - `uml2idl.testing` : le projet dans lequel nous vous fournissons différents modèles UMLs que votre transformation devra être capable de transformer, ainsi que les _launchers_ permettant d'exécuter votre transformation ATL et générateur de code.
 Chaque modèle est présent dans le répertoire `models/input/uml`.
 Vous pouvez compléter ce répertoire avec d'autres modèles UML si vous le souhaitez.
-** Pour tester votre transformation ATL, vous pouvez utiliser les deux fichiers `runTransformation-XXXX.launch` qui se trouvent dans le projet, chacun de ces fichiers pouvant déclencher la transformation d'un des modèles de test.
-Les modèles produits seront écrits dans le répertoire `models/output/idl`.
-** Pour tester votre générateur de code, vous devez déjà avoir déjà fait appel à votre transformation ATL sur les différents modèles UML fournis (voir item précédent), puis vous pouvez utiliser le fichier `runCodeGenerator.launch`.
-Cela lira les modèles présents dans le répertoire `models/output/idl`, et cela produira à côté de ces modèles des fichiers avec l'extension `.thrift` contenant le code généré. 
-Pensez à faire F5 dans le répertoire pour que vos fichiers `.thrift` apparaissent.
+** *Pour tester votre transformation ATL*, vous pouvez utiliser le fichier `runTransformation-allModels.launch` qui se trouve dans le projet.
+Ce lanceur exécute votre transformation ATL sur chacun des modèles UML disponibles dans `models/input/uml`, et rend disponible les résultats dans le répertoire `models/output/idl`.
+Pensez à faire F5 dans le répertoire `models` pour que vos fichiers `.xmi` produits apparaissent.
+Vous pouvez, si vous le souhaitez, compléter le répertoire `models/input/uml` avec vos propres modèles UML, qui seront alors automatiquement pris en compte par `runTransformation-allModels.launch`.
+** *Pour tester votre générateur de code*, vous devez déjà avoir déjà fait appel à votre transformation ATL sur les modèles UML disponibles (voir item précédent), puis vous pouvez utiliser le fichier `runCodeGenerator-allModels.launch`.
+Cela lira les modèles présents dans le répertoire `models/output/idl` (produits par votre transformation ATL), et cela produira à côté de ces modèles des fichiers avec l'extension `.thrift` contenant le code généré. 
+Pensez à faire F5 dans le répertoire `models` pour que vos fichiers `.thrift` produits apparaissent.
 
 NOTE: Pour exécuter un fichier `.launch`, il suffit de faire un clic droit et de faire `Run as…` et de choisir l'unique option disponible.
 
