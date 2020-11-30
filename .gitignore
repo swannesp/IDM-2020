@@ -2,3 +2,4 @@
 **/target/
 bin
 thrift.testmodels/models/output
+xtend-gen   

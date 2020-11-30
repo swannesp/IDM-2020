@@ -1,8 +1,8 @@
-package thriftcodegen
+package thriftcodegen.core
 
 import thrift.metamodel.IDL.IDLModel
 
-class ThriftCodeGenerator {
+class IDLCodeGenerator {
 	
 	
 	def String generateCode(IDLModel inputThriftModel) {

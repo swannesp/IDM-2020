@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: thrift.metamodel;singleton:=true
+Bundle-SymbolicName: thrift.idlmetamodel;singleton:=true
 Automatic-Module-Name: thrift.metamodel
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
