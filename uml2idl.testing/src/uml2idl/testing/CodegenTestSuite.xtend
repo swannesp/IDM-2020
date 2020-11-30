@@ -2,16 +2,19 @@ package uml2idl.testing
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.util.List
+import java.util.stream.Collectors
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.MethodSource
 import uml2idl.codegenerator.IDLCodeGenerator
 import uml2idl.metamodel.idl.IDLModel
 
 class CodegenTestSuite {
- 
+
 	private def void generateCodeFrom(String modelPath) {
 		// Load model
 		val ResourceSet rs = new ResourceSetImpl()
@@ -24,17 +27,18 @@ class CodegenTestSuite {
 
 		// Save as file
 		val codePathString = modelPath.replace("xmi", "thrift")
-		val codePath = Paths.get(codePathString)
-		Files.writeString(codePath, result)
+		val codePath = Paths::get(codePathString)
+		Files::writeString(codePath, result)
 	}
 
-	@Test
-	def void generateCodeCache() {
-		generateCodeFrom("models/output/idl/cache.xmi")
+	@ParameterizedTest
+	@MethodSource("modelProvider")
+	def void generateCode(String argument) {
+		generateCodeFrom(argument);
 	}
 
-	@Test
-	def void generateCodeCacheDatatypes() {
-		generateCodeFrom("models/output/idl/cache-datatypes.xmi")
+	def static List<String> modelProvider() {
+		return Files::list(Paths::get("models/output/idl/")).map([p|p.toString]).filter([s|s.endsWith(".xmi")]).collect(Collectors.toList())
 	}
+
 }
