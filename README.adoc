@@ -71,11 +71,10 @@ Le projet sera réalisé par des groupes d'au plus 4 étudiants.
 Le présent dépôt contient 4 projets Eclipse à importer, à savoir :
 
 - `uml2idl.metamodel` : le projet dans lequel vous devez mettre au point un métamodèle pour le langage Thrift IDL. 
-Un fichier `.ecore` à compléter s'y trouve. 
-Après chaque modification faite à ce fichier `.ecore` (par l'éditeur arborescent ou par la vue graphique à l'aide du `.aird`), n'oubliez pas d'ouvrir le fichier `.genmodel` qui se trouve à côté, puis de faire clic droit et _Generate Model Code_.
+Un fichier `.ecore` à compléter s'y trouve, éditable notamment au travers de sa vue graphique `.aird`. 
+Après chaque modification faite à ce fichier `.ecore`, n'oubliez pas d'ouvrir le fichier `.genmodel` qui se trouve à côté, puis de faire clic droit et _Generate Model Code_.
 - `uml2idl.transformation` : le projet dans lequel vous devez écrire en ATL votre transformation UML→IDL.
 Un fichier `.atl` à compléter s'y trouve.
-
 - `uml2idl.codegenerator` : le projet dans lequel vous devez écrire en Xtend votre générateur de code pour modèles Thrift IDL.
 Un fichier `.xtend` à compléter s'y trouve.
 - `uml2idl.testing` : le projet dans lequel nous vous fournissons différents modèles UMLs que votre transformation devra être capable de transformer, ainsi que les _launchers_ permettant d'exécuter votre transformation ATL et générateur de code.
