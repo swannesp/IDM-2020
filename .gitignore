@@ -1,5 +1,4 @@
 *.asm
-.classpath
 **/target/
 bin
 thrift.testmodels/models/output
