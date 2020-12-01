@@ -55,9 +55,14 @@ Votre transformation ne peut donc pas prendre en considération tous éléments 
 - Les _Interfaces_,
 - Les _Opérations_ contenues par ces _Interfaces_,
 - Les _Paramètres_ de ces _Opérations_,
-- Les types des _Paramètres_: les _Types Primitifs_ et les _Datatypes_.
+- Les types des _Paramètres_ : les _Types Primitifs_ et les _Datatypes_.
+- La direction de chacun des paramètres. 
+On considère que : 
+** Une opération peut posséder un nombre indéfini de paramètres avec comme direction `IN` (qui sont les paramètres d'entrée),
+** Une opération peut posséder un unique paramètre avec comme direction `RETURN` (qui est le paramètre de retour, donnant le type de retour),
+** Une opération ne possède jamais de paramètres avec comme direction `OUT` ou `INOUT`.
 
-Les paramètres peuvent aussi être typés par des classes: dans ce cas, l'opération ne doit pas être considérée.
+Les paramètres peuvent aussi être typés par des classes : dans ce cas, l'opération ne doit pas être considérée.
 
 
 == Travail demandé
