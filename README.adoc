@@ -80,7 +80,7 @@ Les paramètres peuvent aussi être typés par des classes : dans ce cas, l'opé
 
 === Organisation
 
-Le projet sera réalisé par des groupes de 4 étudiants. Seulement si le nombre d'étudiants actifs dans ce cours n'est pas un multiple de 4, alors des groupes de 5 seront exceptionellement possibles.
+Le projet sera réalisé par des groupes de 4 étudiants. Seulement si le nombre d'étudiants actifs dans ce cours n'est pas un multiple de 4, alors des groupes de 5 seront exceptionnellement possibles.
 
 === Préparation
 
