@@ -16,7 +16,7 @@ Ce projet sera réalisé en 3 étapes:
 
 . Spécifier le méta-modèle de Thrift IDL,
 . Écrire, en ATL, des règles de transformation de UML vers IDL,
-. Écrire, grâce à Xtend, un générateur de code Thrift IDL. 
+. Écrire, grâce à Xtend, un générateur de code qui prend en entrée un modèle Thrift IDL, et qui produit en sortie du code valide Thrift IDL. 
 
 
 === Exemple de transformation
