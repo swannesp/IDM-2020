@@ -4,6 +4,17 @@
 = Projet MDE : transformation UML vers Thrift
 
 
+== Pré-requis
+
+Ce projet nécessite une version d'Eclipse comprenant au moins :
+
+- ATL,
+- Xtend,
+- EcoreTools,
+- UML.
+
+Il est recommandé d'utiliser la dernière version (v4 minimum, mise en ligne le 01/12) du Eclipse-MDE préparé par nos soins, qui intègre toutes ces dépendances : https://uncloud.univ-nantes.fr/index.php/f/411334465
+
 == Présentation
 
 === Objectif 
