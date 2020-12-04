@@ -13,7 +13,7 @@ Ce projet nécessite une version d'Eclipse comprenant au moins :
 - EcoreTools,
 - UML.
 
-Il est recommandé d'utiliser la dernière version (v4 minimum, mise en ligne le 01/12) du Eclipse-MDE préparé par nos soins, qui intègre toutes ces dépendances : https://uncloud.univ-nantes.fr/index.php/f/411334465
+Il est recommandé d'utiliser la dernière version (v4 minimum, mise en ligne le 01/12) du Eclipse-MDE préparé par nos soins, qui intègre toutes ces dépendances : https://uncloud.univ-nantes.fr/index.php/s/r4GHtJwHkgyzokG
 
 == Présentation
 
