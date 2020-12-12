@@ -10,7 +10,8 @@ rule model2model {
 		m1 : UML!Model
 	to
 		m2 : IDL!IDLModel (
-				name <- m1.name
+				name <- m1.name,
+				services <- m1.member
 			)
 		
 } 
@@ -20,7 +21,8 @@ rule interface2service {
 		m1 : UML!Interface
 	to
 		m2 : IDL!Service(
-			name <- m1.name
+			name <- m1.name,
+			functions <- m1.ownedOperation
 		)
 }
 
@@ -33,10 +35,13 @@ rule datatype2struct {
 			
 		)
 }
---rule operation2function {
---	from
---		m1 : UML!Operation
---	to
---		m2 : IDL!Function(
---		)
---}
+
+
+rule operation2function {
+	from
+		m1 : UML!Operation
+	to
+		m2 : IDL!Function(
+			name <- m1.name
+		)
+}
