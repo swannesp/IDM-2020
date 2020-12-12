@@ -10,12 +10,30 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Idl" basePackage="uml2idl.metamodel" disposableProviderFactory="true"
       ecorePackage="idl.ecore#/">
+    <genClasses ecoreClass="idl.ecore#//IDLModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//IDLModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idl.ecore#//IDLModel/services"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference idl.ecore#//IDLModel/structs"/>
+    </genClasses>
+    <genClasses ecoreClass="idl.ecore#//Struct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Struct/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference idl.ecore#//Struct/fields"/>
+    </genClasses>
     <genClasses ecoreClass="idl.ecore#//Service">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Service/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference idl.ecore#//Service/functions"/>
     </genClasses>
-    <genClasses ecoreClass="idl.ecore#//IDLModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idl.ecore#//IDLModel/services"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//IDLModel/name"/>
+    <genClasses image="false" ecoreClass="idl.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Function/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference idl.ecore#//Function/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference idl.ecore#//Function/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="idl.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Field/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference idl.ecore#//Field/type"/>
+    </genClasses>
+    <genClasses ecoreClass="idl.ecore#//FieldType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//FieldType/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -5,7 +5,7 @@
 module uml2thrift;
 create OUT : IDL from IN : UML;
 
-rule interface2service {
+rule model2model {
 	from
 		m1 : UML!Model
 	to
@@ -14,3 +14,29 @@ rule interface2service {
 			)
 		
 } 
+
+rule interface2service {
+	from
+		m1 : UML!Interface
+	to
+		m2 : IDL!Service(
+			name <- m1.name
+		)
+}
+
+rule datatype2struct {
+	from
+		m1 : UML!DataType
+	to
+		m2 : IDL!Struct(
+			name <- m1.name	
+			
+		)
+}
+--rule operation2function {
+--	from
+--		m1 : UML!Operation
+--	to
+--		m2 : IDL!Function(
+--		)
+--}

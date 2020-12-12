@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:idl="idl">
+  <idl:IDLModel name="E"/>
+  <idl:Service name="E"/>
+  <idl:Struct name="DataType1"/>
+  <idl:Struct name="DataType2"/>
+</xmi:XMI>
