@@ -5,13 +5,62 @@
 module uml2thrift;
 create OUT : IDL from IN : UML;
 
+helper context UML!Parameter def: isReturn(): Boolean = self.direction = 3;
+
+
+rule parameter2parameter {
+	from
+		m1 : UML!Parameter (m1.direction.name = 'in')
+	to
+		m2 : IDL!Parameter(
+			name <- m1.name--,
+			--direction <-
+			--	if m1.direction.name = 'in'
+			--	then
+			--		'in'
+			--	else
+			--		if m1.direction.name = 'return'
+			--		then
+			--			'return'
+			--		else
+			--			'else'
+			--		endif
+			--	endif
+				
+			)
+}
+
+rule parameter2functiontype {
+	from
+		m1 : UML!Parameter (m1.direction.name = 'return')
+	to
+		m2 : IDL!FieldType(
+			name <- m1.name
+			 
+		)
+}
+
+
+rule operation2function{
+    from
+        m1 : UML!Operation
+    to
+        m2 : IDL!Function(
+            name <- m1.name,
+			type <- m1.type,
+			parameters <- m1.ownedParameter
+        )
+}
+
+
+
 rule model2model {
 	from
 		m1 : UML!Model
 	to
 		m2 : IDL!IDLModel (
-				name <- m1.name,
-				services <- m1.member
+				name <- m1.name ,
+				members <- m1.getOwnedMembers()
 			)
 		
 } 
@@ -31,17 +80,18 @@ rule datatype2struct {
 		m1 : UML!DataType
 	to
 		m2 : IDL!Struct(
-			name <- m1.name	
-			
+			name <- m1.name,
+			fields <- m1.ownedAttribute
 		)
 }
 
-
-rule operation2function {
+rule property2field {
 	from
-		m1 : UML!Operation
+		m1 : UML!Property
 	to
-		m2 : IDL!Function(
+		m2 : IDL!Field(
 			name <- m1.name
 		)
 }
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<idl:IDLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:idl="idl" name="E">
+  <members xsi:type="idl:Service" name="E">
+    <functions name="action">
+      <parameters name="param"/>
+    </functions>
+  </members>
+  <members xsi:type="idl:Struct" name="DataType1">
+    <fields name="value"/>
+  </members>
+  <members xsi:type="idl:Struct" name="DataType2">
+    <fields name="value"/>
+  </members>
+</idl:IDLModel>
