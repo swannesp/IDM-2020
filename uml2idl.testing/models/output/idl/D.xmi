@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<idl:IDLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:idl="idl" name="D">
+  <services name="D">
+    <functions name="do" type="MyDataType">
+      <parameters xsi:type="idl:FieldType" name="return"/>
+    </functions>
+    <functions name="run" type="undefined">
+      <parameters name="u" type="MyDataType" id="1"/>
+    </functions>
+  </services>
+  <structs name="MyDataType">
+    <fields name="value1" type="Real"/>
+    <fields name="value2" type="EShort" id="1"/>
+  </structs>
+</idl:IDLModel>

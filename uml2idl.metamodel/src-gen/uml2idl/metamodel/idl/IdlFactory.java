@@ -31,6 +31,42 @@ public interface IdlFactory extends EFactory {
 	Service createService();
 
 	/**
+	 * Returns a new object of class '<em>Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Field</em>'.
+	 * @generated
+	 */
+	Field createField();
+
+	/**
+	 * Returns a new object of class '<em>Field Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Field Type</em>'.
+	 * @generated
+	 */
+	FieldType createFieldType();
+
+	/**
+	 * Returns a new object of class '<em>Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Function</em>'.
+	 * @generated
+	 */
+	Function createFunction();
+
+	/**
+	 * Returns a new object of class '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter</em>'.
+	 * @generated
+	 */
+	Parameter createParameter();
+
+	/**
 	 * Returns a new object of class '<em>IDL Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,6 +74,15 @@ public interface IdlFactory extends EFactory {
 	 * @generated
 	 */
 	IDLModel createIDLModel();
+
+	/**
+	 * Returns a new object of class '<em>Struct</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Struct</em>'.
+	 * @generated
+	 */
+	Struct createStruct();
 
 	/**
 	 * Returns the package supported by this factory.

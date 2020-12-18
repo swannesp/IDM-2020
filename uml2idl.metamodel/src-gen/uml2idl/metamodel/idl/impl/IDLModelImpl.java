@@ -2,18 +2,24 @@
  */
 package uml2idl.metamodel.idl.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import uml2idl.metamodel.idl.IDLModel;
 import uml2idl.metamodel.idl.IdlPackage;
 import uml2idl.metamodel.idl.Service;
+import uml2idl.metamodel.idl.Struct;
+import uml2idl.metamodel.idl.StructuralElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,23 +29,15 @@ import uml2idl.metamodel.idl.Service;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uml2idl.metamodel.idl.impl.IDLModelImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.impl.IDLModelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.IDLModelImpl#getMembers <em>Members</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.IDLModelImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.IDLModelImpl#getStructs <em>Structs</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLModel {
-	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServices()
-	 * @generated
-	 * @ordered
-	 */
-	protected Service services;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -61,6 +59,36 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getMembers() <em>Members</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMembers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<StructuralElement> members;
+
+	/**
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Service> services;
+
+	/**
+	 * The cached value of the '{@link #getStructs() <em>Structs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStructs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Struct> structs;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -77,56 +105,6 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	@Override
 	protected EClass eStaticClass() {
 		return IdlPackage.Literals.IDL_MODEL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Service getServices() {
-		return services;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetServices(Service newServices, NotificationChain msgs) {
-		Service oldServices = services;
-		services = newServices;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					IdlPackage.IDL_MODEL__SERVICES, oldServices, newServices);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setServices(Service newServices) {
-		if (newServices != services) {
-			NotificationChain msgs = null;
-			if (services != null)
-				msgs = ((InternalEObject) services).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - IdlPackage.IDL_MODEL__SERVICES, null, msgs);
-			if (newServices != null)
-				msgs = ((InternalEObject) newServices).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - IdlPackage.IDL_MODEL__SERVICES, null, msgs);
-			msgs = basicSetServices(newServices, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IdlPackage.IDL_MODEL__SERVICES, newServices,
-					newServices));
 	}
 
 	/**
@@ -155,11 +133,52 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<StructuralElement> getMembers() {
+		if (members == null) {
+			members = new EObjectContainmentEList<StructuralElement>(StructuralElement.class, this,
+					IdlPackage.IDL_MODEL__MEMBERS);
+		}
+		return members;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Service> getServices() {
+		if (services == null) {
+			services = new EObjectContainmentEList<Service>(Service.class, this, IdlPackage.IDL_MODEL__SERVICES);
+		}
+		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Struct> getStructs() {
+		if (structs == null) {
+			structs = new EObjectContainmentEList<Struct>(Struct.class, this, IdlPackage.IDL_MODEL__STRUCTS);
+		}
+		return structs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case IdlPackage.IDL_MODEL__MEMBERS:
+			return ((InternalEList<?>) getMembers()).basicRemove(otherEnd, msgs);
 		case IdlPackage.IDL_MODEL__SERVICES:
-			return basicSetServices(null, msgs);
+			return ((InternalEList<?>) getServices()).basicRemove(otherEnd, msgs);
+		case IdlPackage.IDL_MODEL__STRUCTS:
+			return ((InternalEList<?>) getStructs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -172,10 +191,14 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case IdlPackage.IDL_MODEL__SERVICES:
-			return getServices();
 		case IdlPackage.IDL_MODEL__NAME:
 			return getName();
+		case IdlPackage.IDL_MODEL__MEMBERS:
+			return getMembers();
+		case IdlPackage.IDL_MODEL__SERVICES:
+			return getServices();
+		case IdlPackage.IDL_MODEL__STRUCTS:
+			return getStructs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,14 +208,24 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case IdlPackage.IDL_MODEL__SERVICES:
-			setServices((Service) newValue);
-			return;
 		case IdlPackage.IDL_MODEL__NAME:
 			setName((String) newValue);
+			return;
+		case IdlPackage.IDL_MODEL__MEMBERS:
+			getMembers().clear();
+			getMembers().addAll((Collection<? extends StructuralElement>) newValue);
+			return;
+		case IdlPackage.IDL_MODEL__SERVICES:
+			getServices().clear();
+			getServices().addAll((Collection<? extends Service>) newValue);
+			return;
+		case IdlPackage.IDL_MODEL__STRUCTS:
+			getStructs().clear();
+			getStructs().addAll((Collection<? extends Struct>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -206,11 +239,17 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case IdlPackage.IDL_MODEL__SERVICES:
-			setServices((Service) null);
-			return;
 		case IdlPackage.IDL_MODEL__NAME:
 			setName(NAME_EDEFAULT);
+			return;
+		case IdlPackage.IDL_MODEL__MEMBERS:
+			getMembers().clear();
+			return;
+		case IdlPackage.IDL_MODEL__SERVICES:
+			getServices().clear();
+			return;
+		case IdlPackage.IDL_MODEL__STRUCTS:
+			getStructs().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -224,10 +263,14 @@ public class IDLModelImpl extends MinimalEObjectImpl.Container implements IDLMod
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case IdlPackage.IDL_MODEL__SERVICES:
-			return services != null;
 		case IdlPackage.IDL_MODEL__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case IdlPackage.IDL_MODEL__MEMBERS:
+			return members != null && !members.isEmpty();
+		case IdlPackage.IDL_MODEL__SERVICES:
+			return services != null && !services.isEmpty();
+		case IdlPackage.IDL_MODEL__STRUCTS:
+			return structs != null && !structs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

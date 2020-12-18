@@ -67,13 +67,43 @@ public class IdlAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected IdlSwitch<Adapter> modelSwitch = new IdlSwitch<Adapter>() {
 		@Override
+		public Adapter caseIDLModel(IDLModel object) {
+			return createIDLModelAdapter();
+		}
+
+		@Override
+		public Adapter caseStructuralElement(StructuralElement object) {
+			return createStructuralElementAdapter();
+		}
+
+		@Override
+		public Adapter caseStruct(Struct object) {
+			return createStructAdapter();
+		}
+
+		@Override
 		public Adapter caseService(Service object) {
 			return createServiceAdapter();
 		}
 
 		@Override
-		public Adapter caseIDLModel(IDLModel object) {
-			return createIDLModelAdapter();
+		public Adapter caseField(Field object) {
+			return createFieldAdapter();
+		}
+
+		@Override
+		public Adapter caseFieldType(FieldType object) {
+			return createFieldTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseFunction(Function object) {
+			return createFunctionAdapter();
+		}
+
+		@Override
+		public Adapter caseParameter(Parameter object) {
+			return createParameterAdapter();
 		}
 
 		@Override
@@ -110,6 +140,62 @@ public class IdlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uml2idl.metamodel.idl.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uml2idl.metamodel.idl.Field
+	 * @generated
+	 */
+	public Adapter createFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uml2idl.metamodel.idl.FieldType <em>Field Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uml2idl.metamodel.idl.FieldType
+	 * @generated
+	 */
+	public Adapter createFieldTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uml2idl.metamodel.idl.Function <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uml2idl.metamodel.idl.Function
+	 * @generated
+	 */
+	public Adapter createFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uml2idl.metamodel.idl.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uml2idl.metamodel.idl.Parameter
+	 * @generated
+	 */
+	public Adapter createParameterAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uml2idl.metamodel.idl.IDLModel <em>IDL Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -120,6 +206,34 @@ public class IdlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIDLModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uml2idl.metamodel.idl.StructuralElement <em>Structural Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uml2idl.metamodel.idl.StructuralElement
+	 * @generated
+	 */
+	public Adapter createStructuralElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uml2idl.metamodel.idl.Struct <em>Struct</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uml2idl.metamodel.idl.Struct
+	 * @generated
+	 */
+	public Adapter createStructAdapter() {
 		return null;
 	}
 

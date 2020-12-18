@@ -55,10 +55,20 @@ public class IdlFactoryImpl extends EFactoryImpl implements IdlFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case IdlPackage.SERVICE:
-			return createService();
 		case IdlPackage.IDL_MODEL:
 			return createIDLModel();
+		case IdlPackage.STRUCT:
+			return createStruct();
+		case IdlPackage.SERVICE:
+			return createService();
+		case IdlPackage.FIELD:
+			return createField();
+		case IdlPackage.FIELD_TYPE:
+			return createFieldType();
+		case IdlPackage.FUNCTION:
+			return createFunction();
+		case IdlPackage.PARAMETER:
+			return createParameter();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,9 +89,59 @@ public class IdlFactoryImpl extends EFactoryImpl implements IdlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Field createField() {
+		FieldImpl field = new FieldImpl();
+		return field;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FieldType createFieldType() {
+		FieldTypeImpl fieldType = new FieldTypeImpl();
+		return fieldType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Function createFunction() {
+		FunctionImpl function = new FunctionImpl();
+		return function;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public IDLModel createIDLModel() {
 		IDLModelImpl idlModel = new IDLModelImpl();
 		return idlModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Struct createStruct() {
+		StructImpl struct = new StructImpl();
+		return struct;
 	}
 
 	/**

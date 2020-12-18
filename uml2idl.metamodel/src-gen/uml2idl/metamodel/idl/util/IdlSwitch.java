@@ -66,16 +66,62 @@ public class IdlSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case IdlPackage.SERVICE: {
-			Service service = (Service) theEObject;
-			T result = caseService(service);
+		case IdlPackage.IDL_MODEL: {
+			IDLModel idlModel = (IDLModel) theEObject;
+			T result = caseIDLModel(idlModel);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case IdlPackage.IDL_MODEL: {
-			IDLModel idlModel = (IDLModel) theEObject;
-			T result = caseIDLModel(idlModel);
+		case IdlPackage.STRUCTURAL_ELEMENT: {
+			StructuralElement structuralElement = (StructuralElement) theEObject;
+			T result = caseStructuralElement(structuralElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case IdlPackage.STRUCT: {
+			Struct struct = (Struct) theEObject;
+			T result = caseStruct(struct);
+			if (result == null)
+				result = caseStructuralElement(struct);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case IdlPackage.SERVICE: {
+			Service service = (Service) theEObject;
+			T result = caseService(service);
+			if (result == null)
+				result = caseStructuralElement(service);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case IdlPackage.FIELD: {
+			Field field = (Field) theEObject;
+			T result = caseField(field);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case IdlPackage.FIELD_TYPE: {
+			FieldType fieldType = (FieldType) theEObject;
+			T result = caseFieldType(fieldType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case IdlPackage.FUNCTION: {
+			Function function = (Function) theEObject;
+			T result = caseFunction(function);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case IdlPackage.PARAMETER: {
+			Parameter parameter = (Parameter) theEObject;
+			T result = caseParameter(parameter);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -101,6 +147,66 @@ public class IdlSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseField(Field object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Field Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Field Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFieldType(FieldType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunction(Function object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameter(Parameter object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>IDL Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -112,6 +218,36 @@ public class IdlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIDLModel(IDLModel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Structural Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Structural Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStructuralElement(StructuralElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Struct</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Struct</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStruct(Struct object) {
 		return null;
 	}
 

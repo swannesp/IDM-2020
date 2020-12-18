@@ -5,8 +5,7 @@
 module uml2thrift;
 create OUT : IDL from IN : UML;
 
-helper context UML!Parameter def: isReturn(): Boolean = self.direction = 3;
-
+helper def: counter: Integer = 1;
 
 rule parameter2parameter {
 	from
@@ -14,21 +13,12 @@ rule parameter2parameter {
 	to
 		m2 : IDL!Parameter(
 			name <- m1.name,
-			type <- m1.type.name--,
-			--direction <-
-			--	if m1.direction.name = 'in'
-			--	then
-			--		'in'
-			--	else
-			--		if m1.direction.name = 'return'
-			--		then
-			--			'return'
-			--		else
-			--			'else'
-			--		endif
-			--	endif
-				
+			type <- m1.type.name,
+			id <- thisModule.counter
 			)
+	do{
+		thisModule.counter <- thisModule.counter + 1;
+	}
 }
 
 
@@ -69,7 +59,8 @@ rule model2model {
 	to
 		m2 : IDL!IDLModel (
 				name <- m1.name ,
-				members <- m1.getOwnedMembers()
+				services <- m1.getOwnedMembers()->select(e| e.oclIsTypeOf(UML!Interface)),
+				structs <- m1.getOwnedMembers()->select(e| e.oclIsTypeOf(UML!DataType))
 			)
 		
 } 
@@ -82,6 +73,9 @@ rule interface2service {
 			name <- m1.name,
 			functions <- m1.ownedOperation
 		)
+	do {
+        thisModule.counter <- 1;
+    }
 }
 
 
@@ -95,6 +89,9 @@ rule datatype2struct {
 			fields <- m1.ownedAttribute
 			
 		)
+	do {
+        thisModule.counter <- 1;
+    }
 }
 
 rule property2field {
@@ -103,8 +100,12 @@ rule property2field {
 	to
 		m2 : IDL!Field(
 			name <- m1.name,
-			type <- m1.type
+			type <- m1.type.name,
+			id <- thisModule.counter
 		)
+	do{
+		thisModule.counter <- thisModule.counter + 1;
+	}
 }
 
 

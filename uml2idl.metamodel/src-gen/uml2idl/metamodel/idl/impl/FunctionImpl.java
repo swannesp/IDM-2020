@@ -3,35 +3,41 @@
 package uml2idl.metamodel.idl.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import uml2idl.metamodel.idl.Function;
 import uml2idl.metamodel.idl.IdlPackage;
-import uml2idl.metamodel.idl.Service;
+import uml2idl.metamodel.idl.Parameter;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service</b></em>'.
+ * An implementation of the model object '<em><b>Function</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uml2idl.metamodel.idl.impl.ServiceImpl#getName <em>Name</em>}</li>
- *   <li>{@link uml2idl.metamodel.idl.impl.ServiceImpl#getFunctions <em>Functions</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.FunctionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.FunctionImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.FunctionImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ServiceImpl extends StructuralElementImpl implements Service {
+public class FunctionImpl extends MinimalEObjectImpl.Container implements Function {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,21 +59,41 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFunctions()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Function> functions;
+	protected EList<Parameter> parameters;
+
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceImpl() {
+	protected FunctionImpl() {
 		super();
 	}
 
@@ -78,7 +104,7 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IdlPackage.Literals.SERVICE;
+		return IdlPackage.Literals.FUNCTION;
 	}
 
 	/**
@@ -99,7 +125,7 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IdlPackage.SERVICE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, IdlPackage.FUNCTION__NAME, oldName, name));
 	}
 
 	/**
@@ -107,11 +133,32 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Function> getFunctions() {
-		if (functions == null) {
-			functions = new EObjectContainmentEList<Function>(Function.class, this, IdlPackage.SERVICE__FUNCTIONS);
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, IdlPackage.FUNCTION__PARAMETERS);
 		}
-		return functions;
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IdlPackage.FUNCTION__TYPE, oldType, type));
 	}
 
 	/**
@@ -122,8 +169,8 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case IdlPackage.SERVICE__FUNCTIONS:
-			return ((InternalEList<?>) getFunctions()).basicRemove(otherEnd, msgs);
+		case IdlPackage.FUNCTION__PARAMETERS:
+			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,10 +183,12 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case IdlPackage.SERVICE__NAME:
+		case IdlPackage.FUNCTION__NAME:
 			return getName();
-		case IdlPackage.SERVICE__FUNCTIONS:
-			return getFunctions();
+		case IdlPackage.FUNCTION__PARAMETERS:
+			return getParameters();
+		case IdlPackage.FUNCTION__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -153,12 +202,15 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case IdlPackage.SERVICE__NAME:
+		case IdlPackage.FUNCTION__NAME:
 			setName((String) newValue);
 			return;
-		case IdlPackage.SERVICE__FUNCTIONS:
-			getFunctions().clear();
-			getFunctions().addAll((Collection<? extends Function>) newValue);
+		case IdlPackage.FUNCTION__PARAMETERS:
+			getParameters().clear();
+			getParameters().addAll((Collection<? extends Parameter>) newValue);
+			return;
+		case IdlPackage.FUNCTION__TYPE:
+			setType((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -172,11 +224,14 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case IdlPackage.SERVICE__NAME:
+		case IdlPackage.FUNCTION__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case IdlPackage.SERVICE__FUNCTIONS:
-			getFunctions().clear();
+		case IdlPackage.FUNCTION__PARAMETERS:
+			getParameters().clear();
+			return;
+		case IdlPackage.FUNCTION__TYPE:
+			setType(TYPE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -190,10 +245,12 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case IdlPackage.SERVICE__NAME:
+		case IdlPackage.FUNCTION__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case IdlPackage.SERVICE__FUNCTIONS:
-			return functions != null && !functions.isEmpty();
+		case IdlPackage.FUNCTION__PARAMETERS:
+			return parameters != null && !parameters.isEmpty();
+		case IdlPackage.FUNCTION__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -211,8 +268,10 @@ public class ServiceImpl extends StructuralElementImpl implements Service {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ServiceImpl
+} //FunctionImpl

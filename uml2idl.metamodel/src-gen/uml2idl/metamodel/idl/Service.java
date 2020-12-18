@@ -2,7 +2,7 @@
  */
 package uml2idl.metamodel.idl;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,13 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uml2idl.metamodel.idl.Service#getName <em>Name</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.Service#getFunctions <em>Functions</em>}</li>
  * </ul>
  *
  * @see uml2idl.metamodel.idl.IdlPackage#getService()
  * @model
  * @generated
  */
-public interface Service extends EObject {
+public interface Service extends StructuralElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -28,7 +29,7 @@ public interface Service extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see uml2idl.metamodel.idl.IdlPackage#getService_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -42,5 +43,17 @@ public interface Service extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
+	 * The list contents are of type {@link uml2idl.metamodel.idl.Function}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Functions</em>' containment reference list.
+	 * @see uml2idl.metamodel.idl.IdlPackage#getService_Functions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Function> getFunctions();
 
 } // Service
