@@ -13,7 +13,8 @@ rule parameter2parameter {
 		m1 : UML!Parameter (m1.direction.name = 'in')
 	to
 		m2 : IDL!Parameter(
-			name <- m1.name--,
+			name <- m1.name,
+			type <- m1.type.name--,
 			--direction <-
 			--	if m1.direction.name = 'in'
 			--	then
@@ -29,6 +30,7 @@ rule parameter2parameter {
 				
 			)
 }
+
 
 rule parameter2functiontype {
 	from
@@ -47,7 +49,14 @@ rule operation2function{
     to
         m2 : IDL!Function(
             name <- m1.name,
-			type <- m1.type,
+			type <- 
+				if  (m1.type.oclIsUndefined())
+				then
+					'undefined'
+				else
+					m1.type.name
+				endif,
+				
 			parameters <- m1.ownedParameter
         )
 }
@@ -75,6 +84,8 @@ rule interface2service {
 		)
 }
 
+
+
 rule datatype2struct {
 	from
 		m1 : UML!DataType
@@ -82,6 +93,7 @@ rule datatype2struct {
 		m2 : IDL!Struct(
 			name <- m1.name,
 			fields <- m1.ownedAttribute
+			
 		)
 }
 
@@ -90,7 +102,8 @@ rule property2field {
 		m1 : UML!Property
 	to
 		m2 : IDL!Field(
-			name <- m1.name
+			name <- m1.name,
+			type <- m1.type
 		)
 }
 
