@@ -72,11 +72,6 @@ public class IdlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStructuralElement(StructuralElement object) {
-			return createStructuralElementAdapter();
-		}
-
-		@Override
 		public Adapter caseStruct(Struct object) {
 			return createStructAdapter();
 		}
@@ -206,20 +201,6 @@ public class IdlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIDLModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uml2idl.metamodel.idl.StructuralElement <em>Structural Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uml2idl.metamodel.idl.StructuralElement
-	 * @generated
-	 */
-	public Adapter createStructuralElementAdapter() {
 		return null;
 	}
 

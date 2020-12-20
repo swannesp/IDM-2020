@@ -14,7 +14,14 @@ rule parameter2parameter {
 		m2 : IDL!Parameter(
 			name <- m1.name,
 			type <- m1.type.name,
-			id <- thisModule.counter
+			id <- thisModule.counter,
+			isList <- 
+					if m1.upper = 1
+					then
+						false
+					else
+						true
+					endif
 			)
 	do{
 		thisModule.counter <- thisModule.counter + 1;
@@ -22,15 +29,17 @@ rule parameter2parameter {
 }
 
 
-rule parameter2functiontype {
-	from
-		m1 : UML!Parameter (m1.direction.name = 'return')
-	to
-		m2 : IDL!FieldType(
-			name <- m1.name
-			 
-		)
-}
+	
+
+--rule parameter2functiontype {
+--	from
+--		m1 : UML!Parameter (m1.direction.name = 'return')
+--	to
+--		m2 : IDL!FieldType(
+--			name <- m1.name
+--			 
+--		)
+--}
 
 
 rule operation2function{
@@ -47,7 +56,7 @@ rule operation2function{
 					m1.type.name
 				endif,
 				
-			parameters <- m1.ownedParameter
+			parameters <- m1.ownedParameter -> select(e| e.direction.name = 'in')
         )
 }
 
@@ -73,9 +82,7 @@ rule interface2service {
 			name <- m1.name,
 			functions <- m1.ownedOperation
 		)
-	do {
-        thisModule.counter <- 1;
-    }
+	
 }
 
 
@@ -101,7 +108,15 @@ rule property2field {
 		m2 : IDL!Field(
 			name <- m1.name,
 			type <- m1.type.name,
-			id <- thisModule.counter
+			id <- thisModule.counter,
+			isList <- 
+					if m1.upper = 1
+					then
+						false
+					else
+						true
+					endif
+			
 		)
 	do{
 		thisModule.counter <- thisModule.counter + 1;

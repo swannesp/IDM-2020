@@ -64,7 +64,7 @@ public interface IdlPackage extends EPackage {
 	 * @see uml2idl.metamodel.idl.impl.IdlPackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 3;
+	int SERVICE = 2;
 
 	/**
 	 * The meta object id for the '{@link uml2idl.metamodel.idl.impl.FieldImpl <em>Field</em>}' class.
@@ -74,7 +74,7 @@ public interface IdlPackage extends EPackage {
 	 * @see uml2idl.metamodel.idl.impl.IdlPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 4;
+	int FIELD = 3;
 
 	/**
 	 * The meta object id for the '{@link uml2idl.metamodel.idl.impl.FieldTypeImpl <em>Field Type</em>}' class.
@@ -84,7 +84,7 @@ public interface IdlPackage extends EPackage {
 	 * @see uml2idl.metamodel.idl.impl.IdlPackageImpl#getFieldType()
 	 * @generated
 	 */
-	int FIELD_TYPE = 5;
+	int FIELD_TYPE = 4;
 
 	/**
 	 * The meta object id for the '{@link uml2idl.metamodel.idl.impl.FunctionImpl <em>Function</em>}' class.
@@ -94,7 +94,7 @@ public interface IdlPackage extends EPackage {
 	 * @see uml2idl.metamodel.idl.impl.IdlPackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 6;
+	int FUNCTION = 5;
 
 	/**
 	 * The meta object id for the '{@link uml2idl.metamodel.idl.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -104,7 +104,7 @@ public interface IdlPackage extends EPackage {
 	 * @see uml2idl.metamodel.idl.impl.IdlPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 7;
+	int PARAMETER = 6;
 
 	/**
 	 * The meta object id for the '{@link uml2idl.metamodel.idl.impl.IDLModelImpl <em>IDL Model</em>}' class.
@@ -126,22 +126,13 @@ public interface IdlPackage extends EPackage {
 	int IDL_MODEL__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Members</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IDL_MODEL__MEMBERS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IDL_MODEL__SERVICES = 2;
+	int IDL_MODEL__SERVICES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Structs</b></em>' containment reference list.
@@ -150,7 +141,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IDL_MODEL__STRUCTS = 3;
+	int IDL_MODEL__STRUCTS = 2;
 
 	/**
 	 * The number of structural features of the '<em>IDL Model</em>' class.
@@ -159,7 +150,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IDL_MODEL_FEATURE_COUNT = 4;
+	int IDL_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>IDL Model</em>' class.
@@ -171,34 +162,6 @@ public interface IdlPackage extends EPackage {
 	int IDL_MODEL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uml2idl.metamodel.idl.impl.StructuralElementImpl <em>Structural Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uml2idl.metamodel.idl.impl.StructuralElementImpl
-	 * @see uml2idl.metamodel.idl.impl.IdlPackageImpl#getStructuralElement()
-	 * @generated
-	 */
-	int STRUCTURAL_ELEMENT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Structural Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURAL_ELEMENT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Structural Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURAL_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link uml2idl.metamodel.idl.impl.StructImpl <em>Struct</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -206,7 +169,7 @@ public interface IdlPackage extends EPackage {
 	 * @see uml2idl.metamodel.idl.impl.IdlPackageImpl#getStruct()
 	 * @generated
 	 */
-	int STRUCT = 2;
+	int STRUCT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -215,7 +178,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__NAME = STRUCTURAL_ELEMENT_FEATURE_COUNT + 0;
+	int STRUCT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -224,7 +187,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__FIELDS = STRUCTURAL_ELEMENT_FEATURE_COUNT + 1;
+	int STRUCT__FIELDS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Struct</em>' class.
@@ -233,7 +196,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_FEATURE_COUNT = STRUCTURAL_ELEMENT_FEATURE_COUNT + 2;
+	int STRUCT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Struct</em>' class.
@@ -242,7 +205,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_OPERATION_COUNT = STRUCTURAL_ELEMENT_OPERATION_COUNT + 0;
+	int STRUCT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -251,7 +214,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__NAME = STRUCTURAL_ELEMENT_FEATURE_COUNT + 0;
+	int SERVICE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Functions</b></em>' containment reference list.
@@ -260,7 +223,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__FUNCTIONS = STRUCTURAL_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE__FUNCTIONS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -269,7 +232,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = STRUCTURAL_ELEMENT_FEATURE_COUNT + 2;
+	int SERVICE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -278,7 +241,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_OPERATION_COUNT = STRUCTURAL_ELEMENT_OPERATION_COUNT + 0;
+	int SERVICE_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -299,13 +262,31 @@ public interface IdlPackage extends EPackage {
 	int FIELD__TYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__ID = 2;
+
+	/**
+	 * The feature id for the '<em><b>Is List</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__IS_LIST = 3;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = 2;
+	int FIELD_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Field</em>' class.
@@ -380,13 +361,22 @@ public interface IdlPackage extends EPackage {
 	int FUNCTION__TYPE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Returns List</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__RETURNS_LIST = 3;
+
+	/**
 	 * The number of structural features of the '<em>Function</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION_FEATURE_COUNT = 3;
+	int FUNCTION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Function</em>' class.
@@ -407,22 +397,31 @@ public interface IdlPackage extends EPackage {
 	int PARAMETER__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Direction</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__DIRECTION = 1;
-
-	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__TYPE = 2;
+	int PARAMETER__TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ID = 2;
+
+	/**
+	 * The feature id for the '<em><b>Is List</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__IS_LIST = 3;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -431,7 +430,7 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = 3;
+	int PARAMETER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -505,6 +504,28 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getField_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uml2idl.metamodel.idl.Field#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see uml2idl.metamodel.idl.Field#getId()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uml2idl.metamodel.idl.Field#isIsList <em>Is List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is List</em>'.
+	 * @see uml2idl.metamodel.idl.Field#isIsList()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_IsList();
 
 	/**
 	 * Returns the meta object for class '{@link uml2idl.metamodel.idl.FieldType <em>Field Type</em>}'.
@@ -582,6 +603,17 @@ public interface IdlPackage extends EPackage {
 	EAttribute getFunction_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uml2idl.metamodel.idl.Function#isReturnsList <em>Returns List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Returns List</em>'.
+	 * @see uml2idl.metamodel.idl.Function#isReturnsList()
+	 * @see #getFunction()
+	 * @generated
+	 */
+	EAttribute getFunction_ReturnsList();
+
+	/**
 	 * Returns the meta object for class '{@link uml2idl.metamodel.idl.Parameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -603,17 +635,6 @@ public interface IdlPackage extends EPackage {
 	EAttribute getParameter_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uml2idl.metamodel.idl.Parameter#getDirection <em>Direction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Direction</em>'.
-	 * @see uml2idl.metamodel.idl.Parameter#getDirection()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EAttribute getParameter_Direction();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uml2idl.metamodel.idl.Parameter#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -623,6 +644,28 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParameter_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uml2idl.metamodel.idl.Parameter#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see uml2idl.metamodel.idl.Parameter#getId()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uml2idl.metamodel.idl.Parameter#isIsList <em>Is List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is List</em>'.
+	 * @see uml2idl.metamodel.idl.Parameter#isIsList()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_IsList();
 
 	/**
 	 * Returns the meta object for class '{@link uml2idl.metamodel.idl.IDLModel <em>IDL Model</em>}'.
@@ -646,17 +689,6 @@ public interface IdlPackage extends EPackage {
 	EAttribute getIDLModel_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uml2idl.metamodel.idl.IDLModel#getMembers <em>Members</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Members</em>'.
-	 * @see uml2idl.metamodel.idl.IDLModel#getMembers()
-	 * @see #getIDLModel()
-	 * @generated
-	 */
-	EReference getIDLModel_Members();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link uml2idl.metamodel.idl.IDLModel#getServices <em>Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -677,16 +709,6 @@ public interface IdlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIDLModel_Structs();
-
-	/**
-	 * Returns the meta object for class '{@link uml2idl.metamodel.idl.StructuralElement <em>Structural Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Structural Element</em>'.
-	 * @see uml2idl.metamodel.idl.StructuralElement
-	 * @generated
-	 */
-	EClass getStructuralElement();
 
 	/**
 	 * Returns the meta object for class '{@link uml2idl.metamodel.idl.Struct <em>Struct</em>}'.
@@ -796,6 +818,22 @@ public interface IdlPackage extends EPackage {
 		EAttribute FIELD__TYPE = eINSTANCE.getField_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__ID = eINSTANCE.getField_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Is List</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__IS_LIST = eINSTANCE.getField_IsList();
+
+		/**
 		 * The meta object literal for the '{@link uml2idl.metamodel.idl.impl.FieldTypeImpl <em>Field Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -856,6 +894,14 @@ public interface IdlPackage extends EPackage {
 		EAttribute FUNCTION__TYPE = eINSTANCE.getFunction_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Returns List</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUNCTION__RETURNS_LIST = eINSTANCE.getFunction_ReturnsList();
+
+		/**
 		 * The meta object literal for the '{@link uml2idl.metamodel.idl.impl.ParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -874,20 +920,28 @@ public interface IdlPackage extends EPackage {
 		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAMETER__DIRECTION = eINSTANCE.getParameter_Direction();
-
-		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute PARAMETER__TYPE = eINSTANCE.getParameter_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__ID = eINSTANCE.getParameter_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Is List</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__IS_LIST = eINSTANCE.getParameter_IsList();
 
 		/**
 		 * The meta object literal for the '{@link uml2idl.metamodel.idl.impl.IDLModelImpl <em>IDL Model</em>}' class.
@@ -908,14 +962,6 @@ public interface IdlPackage extends EPackage {
 		EAttribute IDL_MODEL__NAME = eINSTANCE.getIDLModel_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Members</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IDL_MODEL__MEMBERS = eINSTANCE.getIDLModel_Members();
-
-		/**
 		 * The meta object literal for the '<em><b>Services</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -930,16 +976,6 @@ public interface IdlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IDL_MODEL__STRUCTS = eINSTANCE.getIDLModel_Structs();
-
-		/**
-		 * The meta object literal for the '{@link uml2idl.metamodel.idl.impl.StructuralElementImpl <em>Structural Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uml2idl.metamodel.idl.impl.StructuralElementImpl
-		 * @see uml2idl.metamodel.idl.impl.IdlPackageImpl#getStructuralElement()
-		 * @generated
-		 */
-		EClass STRUCTURAL_ELEMENT = eINSTANCE.getStructuralElement();
 
 		/**
 		 * The meta object literal for the '{@link uml2idl.metamodel.idl.impl.StructImpl <em>Struct</em>}' class.

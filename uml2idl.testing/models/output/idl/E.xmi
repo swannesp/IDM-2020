@@ -2,13 +2,13 @@
 <idl:IDLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:idl="idl" name="E">
   <services name="E">
     <functions name="action" type="undefined">
-      <parameters name="param" type="DataType1"/>
+      <parameters name="param" type="DataType1" id="1"/>
     </functions>
   </services>
   <structs name="DataType1">
-    <fields name="value" type="DataType2"/>
+    <fields name="value" type="DataType2" id="1"/>
   </structs>
   <structs name="DataType2">
-    <fields name="value" type="EDouble"/>
+    <fields name="value" type="EDouble" id="2"/>
   </structs>
 </idl:IDLModel>

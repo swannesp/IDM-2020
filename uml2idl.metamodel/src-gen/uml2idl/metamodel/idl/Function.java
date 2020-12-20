@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uml2idl.metamodel.idl.Function#getName <em>Name</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.Function#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.Function#getType <em>Type</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.Function#isReturnsList <em>Returns List</em>}</li>
  * </ul>
  *
  * @see uml2idl.metamodel.idl.IdlPackage#getFunction()
@@ -80,5 +81,27 @@ public interface Function extends EObject {
 	 * @generated
 	 */
 	void setType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Returns List</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Returns List</em>' attribute.
+	 * @see #setReturnsList(boolean)
+	 * @see uml2idl.metamodel.idl.IdlPackage#getFunction_ReturnsList()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isReturnsList();
+
+	/**
+	 * Sets the value of the '{@link uml2idl.metamodel.idl.Function#isReturnsList <em>Returns List</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Returns List</em>' attribute.
+	 * @see #isReturnsList()
+	 * @generated
+	 */
+	void setReturnsList(boolean value);
 
 } // Function

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,7 +36,7 @@ import uml2idl.metamodel.idl.Struct;
  *
  * @generated
  */
-public class StructImpl extends StructuralElementImpl implements Struct {
+public class StructImpl extends MinimalEObjectImpl.Container implements Struct {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

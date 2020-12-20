@@ -22,6 +22,8 @@ import uml2idl.metamodel.idl.IdlPackage;
  * <ul>
  *   <li>{@link uml2idl.metamodel.idl.impl.FieldImpl#getName <em>Name</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.impl.FieldImpl#getType <em>Type</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.FieldImpl#getId <em>Id</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.FieldImpl#isIsList <em>Is List</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,46 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsList() <em>Is List</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsList()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_LIST_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsList() <em>Is List</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsList()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isList = IS_LIST_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +175,48 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IdlPackage.FIELD__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsList() {
+		return isList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsList(boolean newIsList) {
+		boolean oldIsList = isList;
+		isList = newIsList;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IdlPackage.FIELD__IS_LIST, oldIsList, isList));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +224,10 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			return getName();
 		case IdlPackage.FIELD__TYPE:
 			return getType();
+		case IdlPackage.FIELD__ID:
+			return getId();
+		case IdlPackage.FIELD__IS_LIST:
+			return isIsList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +245,12 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			return;
 		case IdlPackage.FIELD__TYPE:
 			setType((String) newValue);
+			return;
+		case IdlPackage.FIELD__ID:
+			setId((Integer) newValue);
+			return;
+		case IdlPackage.FIELD__IS_LIST:
+			setIsList((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +270,12 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		case IdlPackage.FIELD__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
+		case IdlPackage.FIELD__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case IdlPackage.FIELD__IS_LIST:
+			setIsList(IS_LIST_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +292,10 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case IdlPackage.FIELD__TYPE:
 			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case IdlPackage.FIELD__ID:
+			return id != ID_EDEFAULT;
+		case IdlPackage.FIELD__IS_LIST:
+			return isList != IS_LIST_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -211,6 +315,10 @@ public class FieldImpl extends MinimalEObjectImpl.Container implements Field {
 		result.append(name);
 		result.append(", type: ");
 		result.append(type);
+		result.append(", id: ");
+		result.append(id);
+		result.append(", isList: ");
+		result.append(isList);
 		result.append(')');
 		return result.toString();
 	}

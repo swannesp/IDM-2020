@@ -14,8 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uml2idl.metamodel.idl.Parameter#getName <em>Name</em>}</li>
- *   <li>{@link uml2idl.metamodel.idl.Parameter#getDirection <em>Direction</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.Parameter#getType <em>Type</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.Parameter#getId <em>Id</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.Parameter#isIsList <em>Is List</em>}</li>
  * </ul>
  *
  * @see uml2idl.metamodel.idl.IdlPackage#getParameter()
@@ -46,28 +47,6 @@ public interface Parameter extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Direction</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Direction</em>' attribute.
-	 * @see #setDirection(String)
-	 * @see uml2idl.metamodel.idl.IdlPackage#getParameter_Direction()
-	 * @model
-	 * @generated
-	 */
-	String getDirection();
-
-	/**
-	 * Sets the value of the '{@link uml2idl.metamodel.idl.Parameter#getDirection <em>Direction</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Direction</em>' attribute.
-	 * @see #getDirection()
-	 * @generated
-	 */
-	void setDirection(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,5 +67,49 @@ public interface Parameter extends EObject {
 	 * @generated
 	 */
 	void setType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
+	 * @see uml2idl.metamodel.idl.IdlPackage#getParameter_Id()
+	 * @model required="true"
+	 * @generated
+	 */
+	int getId();
+
+	/**
+	 * Sets the value of the '{@link uml2idl.metamodel.idl.Parameter#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Is List</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is List</em>' attribute.
+	 * @see #setIsList(boolean)
+	 * @see uml2idl.metamodel.idl.IdlPackage#getParameter_IsList()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isIsList();
+
+	/**
+	 * Sets the value of the '{@link uml2idl.metamodel.idl.Parameter#isIsList <em>Is List</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is List</em>' attribute.
+	 * @see #isIsList()
+	 * @generated
+	 */
+	void setIsList(boolean value);
 
 } // Parameter

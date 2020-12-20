@@ -18,7 +18,6 @@ import uml2idl.metamodel.idl.IdlPackage;
 import uml2idl.metamodel.idl.Parameter;
 import uml2idl.metamodel.idl.Service;
 import uml2idl.metamodel.idl.Struct;
-import uml2idl.metamodel.idl.StructuralElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,13 +67,6 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 	 * @generated
 	 */
 	private EClass idlModelEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass structuralElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,6 +198,24 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getField_Id() {
+		return (EAttribute) fieldEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getField_IsList() {
+		return (EAttribute) fieldEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFieldType() {
 		return fieldTypeEClass;
 	}
@@ -269,6 +279,15 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getFunction_ReturnsList() {
+		return (EAttribute) functionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getParameter() {
 		return parameterEClass;
 	}
@@ -287,7 +306,7 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getParameter_Direction() {
+	public EAttribute getParameter_Type() {
 		return (EAttribute) parameterEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -296,8 +315,17 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getParameter_Type() {
+	public EAttribute getParameter_Id() {
 		return (EAttribute) parameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_IsList() {
+		return (EAttribute) parameterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -323,7 +351,7 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIDLModel_Members() {
+	public EReference getIDLModel_Services() {
 		return (EReference) idlModelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -332,26 +360,8 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIDLModel_Services() {
-		return (EReference) idlModelEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getIDLModel_Structs() {
-		return (EReference) idlModelEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStructuralElement() {
-		return structuralElementEClass;
+		return (EReference) idlModelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -412,11 +422,8 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 		// Create classes and their features
 		idlModelEClass = createEClass(IDL_MODEL);
 		createEAttribute(idlModelEClass, IDL_MODEL__NAME);
-		createEReference(idlModelEClass, IDL_MODEL__MEMBERS);
 		createEReference(idlModelEClass, IDL_MODEL__SERVICES);
 		createEReference(idlModelEClass, IDL_MODEL__STRUCTS);
-
-		structuralElementEClass = createEClass(STRUCTURAL_ELEMENT);
 
 		structEClass = createEClass(STRUCT);
 		createEAttribute(structEClass, STRUCT__NAME);
@@ -429,6 +436,8 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 		fieldEClass = createEClass(FIELD);
 		createEAttribute(fieldEClass, FIELD__NAME);
 		createEAttribute(fieldEClass, FIELD__TYPE);
+		createEAttribute(fieldEClass, FIELD__ID);
+		createEAttribute(fieldEClass, FIELD__IS_LIST);
 
 		fieldTypeEClass = createEClass(FIELD_TYPE);
 		createEAttribute(fieldTypeEClass, FIELD_TYPE__NAME);
@@ -438,11 +447,13 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 		createEAttribute(functionEClass, FUNCTION__NAME);
 		createEReference(functionEClass, FUNCTION__PARAMETERS);
 		createEAttribute(functionEClass, FUNCTION__TYPE);
+		createEAttribute(functionEClass, FUNCTION__RETURNS_LIST);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
-		createEAttribute(parameterEClass, PARAMETER__DIRECTION);
 		createEAttribute(parameterEClass, PARAMETER__TYPE);
+		createEAttribute(parameterEClass, PARAMETER__ID);
+		createEAttribute(parameterEClass, PARAMETER__IS_LIST);
 	}
 
 	/**
@@ -474,26 +485,18 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		structEClass.getESuperTypes().add(this.getStructuralElement());
-		serviceEClass.getESuperTypes().add(this.getStructuralElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(idlModelEClass, IDLModel.class, "IDLModel", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIDLModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, IDLModel.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIDLModel_Members(), this.getStructuralElement(), null, "members", null, 0, -1, IDLModel.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIDLModel_Services(), this.getService(), null, "services", null, 0, -1, IDLModel.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIDLModel_Structs(), this.getStruct(), null, "structs", null, 0, -1, IDLModel.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(structuralElementEClass, StructuralElement.class, "StructuralElement", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(structEClass, Struct.class, "Struct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStruct_Name(), ecorePackage.getEString(), "name", null, 1, 1, Struct.class, !IS_TRANSIENT,
@@ -514,6 +517,10 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getField_Type(), ecorePackage.getEString(), "type", null, 0, 1, Field.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getField_Id(), ecorePackage.getEInt(), "id", null, 1, 1, Field.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getField_IsList(), ecorePackage.getEBoolean(), "isList", null, 1, 1, Field.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldTypeEClass, FieldType.class, "FieldType", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -531,14 +538,18 @@ public class IdlPackageImpl extends EPackageImpl implements IdlPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFunction_Type(), ecorePackage.getEString(), "type", null, 0, 1, Function.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFunction_ReturnsList(), ecorePackage.getEBoolean(), "returnsList", null, 1, 1, Function.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 1, 1, Parameter.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParameter_Direction(), ecorePackage.getEString(), "direction", null, 0, 1, Parameter.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Type(), ecorePackage.getEString(), "type", null, 0, 1, Parameter.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Id(), ecorePackage.getEInt(), "id", null, 1, 1, Parameter.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_IsList(), ecorePackage.getEBoolean(), "isList", null, 1, 1, Parameter.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

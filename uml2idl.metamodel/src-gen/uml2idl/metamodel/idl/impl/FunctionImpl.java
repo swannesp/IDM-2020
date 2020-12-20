@@ -33,6 +33,7 @@ import uml2idl.metamodel.idl.Parameter;
  *   <li>{@link uml2idl.metamodel.idl.impl.FunctionImpl#getName <em>Name</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.impl.FunctionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.impl.FunctionImpl#getType <em>Type</em>}</li>
+ *   <li>{@link uml2idl.metamodel.idl.impl.FunctionImpl#isReturnsList <em>Returns List</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +88,26 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isReturnsList() <em>Returns List</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isReturnsList()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean RETURNS_LIST_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isReturnsList() <em>Returns List</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isReturnsList()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean returnsList = RETURNS_LIST_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,6 +187,28 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isReturnsList() {
+		return returnsList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReturnsList(boolean newReturnsList) {
+		boolean oldReturnsList = returnsList;
+		returnsList = newReturnsList;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IdlPackage.FUNCTION__RETURNS_LIST, oldReturnsList,
+					returnsList));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -189,6 +232,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 			return getParameters();
 		case IdlPackage.FUNCTION__TYPE:
 			return getType();
+		case IdlPackage.FUNCTION__RETURNS_LIST:
+			return isReturnsList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +257,9 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 		case IdlPackage.FUNCTION__TYPE:
 			setType((String) newValue);
 			return;
+		case IdlPackage.FUNCTION__RETURNS_LIST:
+			setReturnsList((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,6 +281,9 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 		case IdlPackage.FUNCTION__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
+		case IdlPackage.FUNCTION__RETURNS_LIST:
+			setReturnsList(RETURNS_LIST_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +302,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 			return parameters != null && !parameters.isEmpty();
 		case IdlPackage.FUNCTION__TYPE:
 			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case IdlPackage.FUNCTION__RETURNS_LIST:
+			return returnsList != RETURNS_LIST_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,6 +323,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 		result.append(name);
 		result.append(", type: ");
 		result.append(type);
+		result.append(", returnsList: ");
+		result.append(returnsList);
 		result.append(')');
 		return result.toString();
 	}

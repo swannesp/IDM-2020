@@ -73,18 +73,9 @@ public class IdlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case IdlPackage.STRUCTURAL_ELEMENT: {
-			StructuralElement structuralElement = (StructuralElement) theEObject;
-			T result = caseStructuralElement(structuralElement);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case IdlPackage.STRUCT: {
 			Struct struct = (Struct) theEObject;
 			T result = caseStruct(struct);
-			if (result == null)
-				result = caseStructuralElement(struct);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -92,8 +83,6 @@ public class IdlSwitch<T> extends Switch<T> {
 		case IdlPackage.SERVICE: {
 			Service service = (Service) theEObject;
 			T result = caseService(service);
-			if (result == null)
-				result = caseStructuralElement(service);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -218,21 +207,6 @@ public class IdlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIDLModel(IDLModel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Structural Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Structural Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStructuralElement(StructuralElement object) {
 		return null;
 	}
 

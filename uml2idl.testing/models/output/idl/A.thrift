@@ -1,0 +1,3 @@
+service A {
+	void foo()
+}

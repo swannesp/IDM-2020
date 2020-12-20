@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<idl:IDLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:idl="idl" name="C">
+<idl:IDLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:idl="idl" name="C">
   <services name="C1">
     <functions name="f1" type="EInt">
-      <parameters name="i1" type="EInt"/>
-      <parameters name="i2" type="EInt"/>
-      <parameters xsi:type="idl:FieldType" name="return"/>
+      <parameters name="i1" type="EInt" id="1"/>
+      <parameters name="i2" type="EInt" id="2" isList="true"/>
     </functions>
     <functions name="f2" type="undefined">
-      <parameters name="x" type="EBoolean"/>
+      <parameters name="x" type="EBoolean" id="3"/>
     </functions>
   </services>
   <services name="C2">
-    <functions name="f3" type="EChar">
-      <parameters xsi:type="idl:FieldType" name="return"/>
-    </functions>
+    <functions name="f3" type="EChar"/>
   </services>
 </idl:IDLModel>

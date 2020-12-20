@@ -12,11 +12,9 @@
       ecorePackage="idl.ecore#/">
     <genClasses ecoreClass="idl.ecore#//IDLModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//IDLModel/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idl.ecore#//IDLModel/members"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idl.ecore#//IDLModel/services"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference idl.ecore#//IDLModel/structs"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="idl.ecore#//StructuralElement"/>
     <genClasses ecoreClass="idl.ecore#//Struct">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Struct/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference idl.ecore#//Struct/fields"/>
@@ -28,6 +26,8 @@
     <genClasses ecoreClass="idl.ecore#//Field">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Field/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute idl.ecore#//Field/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Field/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Field/isList"/>
     </genClasses>
     <genClasses ecoreClass="idl.ecore#//FieldType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//FieldType/name"/>
@@ -37,11 +37,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Function/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference idl.ecore#//Function/parameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute idl.ecore#//Function/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Function/returnsList"/>
     </genClasses>
     <genClasses ecoreClass="idl.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Parameter/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Parameter/direction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Parameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Parameter/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute idl.ecore#//Parameter/isList"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

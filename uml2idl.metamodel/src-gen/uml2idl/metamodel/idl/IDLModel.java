@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uml2idl.metamodel.idl.IDLModel#getName <em>Name</em>}</li>
- *   <li>{@link uml2idl.metamodel.idl.IDLModel#getMembers <em>Members</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.IDLModel#getServices <em>Services</em>}</li>
  *   <li>{@link uml2idl.metamodel.idl.IDLModel#getStructs <em>Structs</em>}</li>
  * </ul>
@@ -47,18 +46,6 @@ public interface IDLModel extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Members</b></em>' containment reference list.
-	 * The list contents are of type {@link uml2idl.metamodel.idl.StructuralElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Members</em>' containment reference list.
-	 * @see uml2idl.metamodel.idl.IdlPackage#getIDLModel_Members()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<StructuralElement> getMembers();
 
 	/**
 	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
